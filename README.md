@@ -96,7 +96,7 @@ The system is built using Node version v20.11.1.
     ```
 3. Run the application:
     ```bash
-    npm run dev
+    npm run start:dev
     ```
 
 ## Contributing

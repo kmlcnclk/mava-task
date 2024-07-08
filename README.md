@@ -1,73 +1,110 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# MAVA Task
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This document outlines the MAVA Task.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Swagger 
 
-## Description
+You can go to main route to use swagger ui. (`http://localhost:3000/`) 
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Auth Management
+
+### User Login
+
+**Endpoint:** `/auth/login`  
+**Method:** `POST`
+
+Allows the user to login successfully.
+
+**Parameters:**
+- `Agency` (string)
+- `User` (string)
+- `Password` (string)
+
+## Hotel Product Management
+
+### Get Arrival Autocomplete
+
+**Endpoint:** `/hotel-product/getarrivalautocomplete`  
+**Method:** `POST`
+
+Returns the Arrival Autocomplete's information.
+
+**Headers:**
+- `Authorization` (string): The access token.
+
+**Parameters:**
+- `ProductType` (number)
+- `Query` (string)
+- `Culture` (string)
+
+### Search Price
+
+**Endpoint:** `/hotel-product/pricesearch`  
+**Method:** `POST`
+
+Returns the Prices' information.
+
+**Headers:**
+- `Authorization` (string): The access token.
+
+**Parameters:**
+- `checkAllotment` (boolean)
+- `checkStopSale` (boolean)
+- `getOnlyDiscountedPrice` (boolean)
+- `getOnlyBestOffers` (boolean)
+- `productType` (number)
+- `productType` (number)
+- `productType` (number)
+- `arrivalLocations` (Array<{ id: string, type: number }>)
+- `roomCriteria` (Array<{ adult: number, childAges: number[] }>)
+- `nationality` (string)
+- `checkIn` (string)
+- `night` (number)
+- `currency` (string)
+- `culture` (string)
+
+## Used Technologies
+
+- Typescript
+- Javascript
+- Express.js
+- Nest JS
+- Zod
+- Axios
+- Swagger
+- Dotenv
+
+## Node Version
+
+The system is built using Node version v20.11.1.
+
+## Note
+
+- Normally important information such as `.env` should not be added to GitHub projects, but I added it so that the application can be run by everyone.
+- Additionally, unit and e2e tests have been written for APIs.
 
 ## Installation
 
-```bash
-$ npm install
-```
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/kmlcnclk/mava-task.git
+    ```
+2. Install dependencies:
+    ```bash
+    cd mava-task
+    npm install
+    ```
+3. Run the application:
+    ```bash
+    npm run dev
+    ```
 
-## Running the app
+## Contributing
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Feel free to submit issues or pull requests for improvements and bug fixes.
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+This project is licensed under the MIT License.
+
+This documentation provides a comprehensive guide to using the APIs within our cryptocurrency trading system. For further details or support, please refer to the project's GitHub repository.

@@ -1,6 +1,4 @@
-# MAVA Task
-
-This document outlines the MAVA Task.
+# Hotel Management System
 
 ## Swagger 
 
